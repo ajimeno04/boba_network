@@ -7,7 +7,7 @@ import {
   SidebarListItemIcon,
   SidebarListItemText,
 } from '@/components/sidebar/SidebarList'
-import { BEAMER_SELECTOR, loadBeamer } from '@/services/beamer'
+import { loadBeamer } from '@/services/beamer'
 import { useAppDispatch, useAppSelector } from '@/store'
 import { CookieAndTermType, hasConsentFor } from '@/store/cookiesAndTermsSlice'
 import { openCookieBanner } from '@/store/popupSlice'
@@ -64,11 +64,7 @@ const SidebarFooter = (): ReactElement => {
       <Track {...OVERVIEW_EVENTS.SUGGESTIONS}>
         <ListItem disablePadding>
           <a target="_blank" rel="noopener noreferrer" href={NEW_SUGGESTION_FORM} style={{ width: '100%' }}>
-            <SidebarListItemButton
-              id={BEAMER_SELECTOR}
-              style={{ backgroundColor: '#12FF80', color: 'black' }}
-              onClick={handleBeamer}
-            >
+            <SidebarListItemButton style={{ backgroundColor: '#12FF80', color: 'black' }}>
               <SidebarListItemIcon color="primary">
                 <SuggestionIcon />
               </SidebarListItemIcon>
